@@ -23,7 +23,7 @@ function Portfolio() {
 
     return (
         <section>
-            <h1>
+            <h3>
                 <ul className="flex-row">
                     {categories.map((category) => (
                         <li 
@@ -41,7 +41,7 @@ function Portfolio() {
                         </li>
                     ))}
                 </ul>
-            </h1>
+            </h3>
             <Gallery 
                 categories={categories}
                 setCurrentCategory={setCurrentCategory}
