@@ -1,36 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import About from './components/About';
-import Nav from './components/Nav';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Portfolio from './components/Portfolio';
 
 function App() {
 
-  const [categories] = useState([
-    {
-        name: "Portfolio",
-        description: "Portfolio of web development projects"
-    },
-    {
-        name: "Resume",
-        description: "Personal resume and we development proficiencies"
-    }
-]);
-
-const [currentCategory, setCurrentCategory] = useState(categories[0]);
-
-
   return (
     <div>
-      <Nav 
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
-        />
+      <Header />
       <main>
         <Portfolio />
         <About />
       </main>
+      <Footer />
     </div>
   );
 }
