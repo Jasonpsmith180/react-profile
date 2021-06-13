@@ -1,30 +1,31 @@
-import React, { useState } from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpers';
+import React from 'react';
+// import { capitalizeFirstLetter } from '../../utils/helpers';
 import Gallery from '../Gallery';
 
 function Portfolio() {
 
-    const [categories] = useState([
-        {
-            name: "front-end",
-            description: "Websites built using front-end languages"
-        },
-        {
-            name: "back-end",
-            description: "Websites built using back-end languages"
-        },
-        {
-            name: "full-stack",
-            description: "Websites built using full-stack packages"
-        }
-    ]);
+    // const [categories] = useState([
+    //     {
+    //         name: "front-end",
+    //         description: "Websites built using front-end languages"
+    //     },
+    //     {
+    //         name: "back-end",
+    //         description: "Websites built using back-end languages"
+    //     },
+    //     {
+    //         name: "full-stack",
+    //         description: "Websites built using full-stack packages"
+    //     }
+    // ]);
 
-    const [currentCategory, setCurrentCategory] = useState(categories[0]);
+    // const [currentCategory, setCurrentCategory] = useState(categories[0]);
+    // const { name, description } = currentCategory;
 
     return (
         <section>
             <h3>
-                <ul className="flex-row">
+                {/* <ul className="flex-row">
                     {categories.map((category) => (
                         <li 
                             className={`mx-2 ${
@@ -40,13 +41,10 @@ function Portfolio() {
                             </span>
                         </li>
                     ))}
-                </ul>
+                </ul> */}
+            Projects
             </h3>
-            <Gallery 
-                categories={categories}
-                setCurrentCategory={setCurrentCategory}
-                currentCategory={currentCategory}
-            />
+            <Gallery />
         </section>
     );
 }
