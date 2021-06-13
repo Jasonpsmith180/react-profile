@@ -1,5 +1,4 @@
 import React from 'react';
-import photo from "../../assets/small/0.jpg";
 // import { capitalizeFirstLetter } from '../../utils/helpers';
 
 function Gallery(props) {
