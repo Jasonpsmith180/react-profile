@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import photo from '../../assets/small/2.jpg';
+import photo from '../../assets/small/1.jpg';
 
 function ProjectList() {
     const [projects] = useState([
