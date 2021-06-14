@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import photo from '../../assets/small/0.jpg';
+import photo from '../../assets/small/2.jpg';
 
 function ProjectList() {
     const [projects] = useState([
@@ -35,23 +35,18 @@ function ProjectList() {
         }
     ]);
 
-    const currentProjects = [];
-
-    for (const [i, project] of projects.entries()) {
-        currentProjects.push(
-            <img
-                src={require(`../../assets/small/${i}.jpg`)}
-                alt={project.name}
-                className="img-thumbnail mx-1"
-                key={project.name}
-            />
-        )
-    }
-
     return (
         <div>
             <div className="flex-row">
-                {currentProjects}
+                {projects.map((project, i) => (
+                    <img
+                        src={require(`../../assets/small/${i}.jpg`)}
+                        alt={project.name}
+                        className="img-thumbnail mx-1"
+                        key={project.name}
+                    />
+                ))}
+                <img src={photo} alt="text" />
             </div>
         </div>
     );
