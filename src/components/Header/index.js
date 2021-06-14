@@ -4,10 +4,8 @@ import Nav from '../Nav';
 function Header(props) {
 
     const {
-        contactSelected,
-        setContactSelected,
-        portfolioSelected,
-        setPortfolioSelected
+        navSelected,
+        setNavSelected,
     } = props;
 
     return (
@@ -18,10 +16,8 @@ function Header(props) {
                 </a>
             </h2>
             <Nav 
-                contactSelected={contactSelected}
-                setContactSelected={setContactSelected}
-                portfolioSelected={portfolioSelected}
-                setPortfolioSelected={setPortfolioSelected}
+                navSelected={navSelected}
+                setNavSelected={setNavSelected}
             />
         </header>
     );
