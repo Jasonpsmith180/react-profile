@@ -49,16 +49,17 @@ function ProjectList() {
     return (
         <div>
             <div className="flex-row">
-                {projects.map((project, i) => (
+                {projects.map((project, i) => {
+                    return (
                     <a href={project.github} target="_blank" rel="noreferrer">
                     <img
-                        src={require(`../../assets/small/${i}.jpg`)}
+                        src={require(`../../assets/small/${i}.jpg`).default}
                         alt={project.name}
                         className="img-thumbnail mx-1"
                         key={project.name}
                     />
                     </a>
-                ))}
+                )})}
             </div>
         </div>
     );
