@@ -10,11 +10,7 @@ function Header(props) {
 
     return (
         <header className="flex-row px-1">
-            <h2>
-                <a href='/react-profile'>
-                    Jason Smith
-                </a>
-            </h2>
+            <h2>Jason Smith</h2>
             <Nav 
                 navSelected={navSelected}
                 setNavSelected={setNavSelected}
