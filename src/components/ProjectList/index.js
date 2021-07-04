@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
+import Modal from '../Modal';
 
 function ProjectList() {
     const [projects] = useState([
+        {
+            name: 'Golf Buddy',
+            category: 'MERN Stack',
+            description: 'A site for golfers to log their scores, make friends with other golfers and comment on scores',
+            url: 'https://bearded-leaf-21355.herokuapp.com/',
+            github: 'https://github.com/Jasonpsmith180/golf-buddy'
+        },
         {
             name: 'Run Buddy',
             category: 'front-end',
@@ -46,19 +54,30 @@ function ProjectList() {
         }
     ]);
 
+    const [currentProject, setCurrentProject] = useState();
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const toggleModal = (project, i) => {
+        setCurrentProject({...project, index: i});
+        setIsModalOpen(!isModalOpen);
+    }
+
     return (
         <div>
+            {isModalOpen && (
+                <Modal currentProject={currentProject} onClose={toggleModal}/>
+            )}
             <div className="flex-row">
                 {projects.map((project, i) => {
                     return (
-                    <a href={project.github} target="_blank" rel="noreferrer">
                     <img
                         src={require(`../../assets/small/${i}.jpg`).default}
                         alt={project.name}
                         className="img-thumbnail mx-1"
+                        onClick={() => toggleModal(project, i)}
                         key={project.name}
                     />
-                    </a>
                 )})}
             </div>
         </div>
