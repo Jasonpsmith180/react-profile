@@ -29,20 +29,12 @@ function ContactForm() {
         }
     }
 
-    async function handleSubmit(e) {
+    function handleSubmit(e) {
         e.preventDefault();
-        setStatus("Sending...");
-        let response = await fetch("http://localhost:5000/contact", {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json;charset=utf-8",
-            },
-            body: JSON.stringify(formState),
-        });
-        setStatus("Submit");
-        let result = await response.json();
-        alert(result.status);
-        console.log(formState);
+        
+        let mail = formState
+        
+        console.log(mail);
     }
 
     return(
