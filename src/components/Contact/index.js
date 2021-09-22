@@ -1,4 +1,3 @@
-import SendmailTransport from 'nodemailer/lib/sendmail-transport';
 import React, { useState } from 'react';
 import { validateEmail } from '../../utils/helpers';
 
@@ -38,7 +37,7 @@ function ContactForm() {
     }
 
     function sendMail(mail) {
-        fetch("https://mighty-headland-08029.herokuapp.com/send", {
+        fetch("https://peaceful-harbor-96103.herokuapp.com/send", {
             method: 'post',
             body: mail
         })
