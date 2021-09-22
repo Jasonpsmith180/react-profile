@@ -4,24 +4,16 @@ import Nav from '../Nav';
 function Header(props) {
 
     const {
-        contactSelected,
-        setContactSelected,
-        portfolioSelected,
-        setPortfolioSelected
+        navSelected,
+        setNavSelected,
     } = props;
 
     return (
         <header className="flex-row px-1">
-            <h2>
-                <a href='/'>
-                    Jason Smith
-                </a>
-            </h2>
+            <h2>Jason Smith</h2>
             <Nav 
-                contactSelected={contactSelected}
-                setContactSelected={setContactSelected}
-                portfolioSelected={portfolioSelected}
-                setPortfolioSelected={setPortfolioSelected}
+                navSelected={navSelected}
+                setNavSelected={setNavSelected}
             />
         </header>
     );

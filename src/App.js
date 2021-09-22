@@ -5,37 +5,34 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Portfolio from './components/Portfolio';
 import ContactForm from './components/Contact';
-
+import Resume from './components/Resume';
 
 function App() {
 
-  const [contactSelected, setContactSelected] = useState(false);
-  const [portfolioSelected, setPortfolioSelected] = useState(false);
+  const [navSelected, setNavSelected] = useState(<About />)
+
+  function renderSwitch(navSelected) {
+    switch(navSelected) {
+      case '<Portfolio />': 
+        return <Portfolio />;
+      case '<ContactForm />':
+        return <ContactForm />;
+      case '<Resume />':
+        return <Resume />;
+      default:
+        return <About />;
+    }
+  }
 
   return (
     <div>
       <Header
-        contactSelected={contactSelected}
-        setContactSelected={setContactSelected}
-        portfolioSelected={portfolioSelected}
-        setPortfolioSelected={setPortfolioSelected}
+        navSelected={navSelected}
+        setNavSelected={setNavSelected}
+
       />
       <main>
-        {contactSelected ? (
-          <>
-            <ContactForm />
-            
-          </>
-        ) : (
-          <About />
-        )}
-        {portfolioSelected ? (
-          <>
-            <Portfolio />
-          </>
-        ) : (
-          <About />
-        )}
+        {renderSwitch(navSelected)}
       </main>
       <Footer />
     </div>
