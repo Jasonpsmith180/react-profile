@@ -1,3 +1,4 @@
+import SendmailTransport from 'nodemailer/lib/sendmail-transport';
 import React, { useState } from 'react';
 import { validateEmail } from '../../utils/helpers';
 
@@ -31,11 +32,20 @@ function ContactForm() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        
         let mail = formState
-        
+        sendMail(mail);
         console.log(mail);
     }
+
+    function sendMail(mail) {
+        fetch("https://mighty-headland-08029.herokuapp.com/send", {
+            method: 'post',
+            body: mail
+        })
+        .then((response) => {
+            return response.json();
+        });
+    };
 
     return(
         <section>

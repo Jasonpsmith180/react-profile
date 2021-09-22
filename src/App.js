@@ -29,13 +29,13 @@ function App() {
         ) : (
           <About />
         )}
-        {/* {portfolioSelected ? (
+        {portfolioSelected ? (
           <>
             <Portfolio />
           </>
         ) : (
           <About />
-        )} */}
+        )}
       </main>
       <Footer />
     </div>
