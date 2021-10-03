@@ -1,4 +1,5 @@
 import React from 'react';
+import jasonResume from '../../assets/resume/JasonSmithResume.pdf'
 
 function Resume() {
     return (
@@ -32,7 +33,7 @@ function Resume() {
                     </li>
                 </ul>
             </p>
-            <h4><a href='../../assets/resume/resume.txt' download>Download Resume</a></h4>
+            <h4><a href={jasonResume} download="JasonSmithResume">Download Resume</a></h4>
         </section>
     )
 };

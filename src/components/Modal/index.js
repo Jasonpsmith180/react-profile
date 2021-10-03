@@ -17,7 +17,7 @@ function Modal({ onClose, currentProject}) {
                     github: <a href={github} target="_blank" rel="noreferrer">{github}</a>
                 </p>
                 <button type='button' onClick={onClose}>
-                    Close modal
+                    Close
                 </button>
             </div>
         </div>
