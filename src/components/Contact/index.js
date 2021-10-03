@@ -6,7 +6,7 @@ function ContactForm() {
     const [formState, setFormState] = useState({ name: '', email: '', subject: '', message: '' });
     const { name, email, subject, message } = formState;
 
-    const [status, setStatus] = useState("Submit");
+    // const [status, setStatus] = useState("Submit");
 
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -31,46 +31,60 @@ function ContactForm() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        setStatus("Sending...");
-        let response = await fetch("http://localhost:5000/contact", {
-            method: 'POST',
+        console.log({ formState });
+        const response = await fetch("http://localhost:3001/send", {
+            method: "POST",
             headers: {
-                "Content-Type": "application/json;charset=utf-8",
+                "Content-type": "application/json",
             },
-            body: JSON.stringify(formState),
+            body: JSON.stringify({ formState }),
+        })
+        .then((res) => res.json())
+        .then(async (res) => {
+            const resData = await res;
+            console.log(resData);
+            if (resData.status === "success") {
+                alert("Message Sent");
+            } else if (resData.status === "fail") {
+                alert("Message failed to send");
+            }
+        })
+        .then(() => {
+            setFormState({
+                name: '',
+                email: '',
+                subject: '',
+                message: ''
+            });
         });
-        setStatus("Submit");
-        let result = await response.json();
-        alert(result.status);
-        console.log(formState);
-    }
+    };
 
     return(
         <section>
             <h1>Contact Me</h1>
-            <form id="contact-form" onSubmit={handleSubmit}>
+            <form id="contact-form" onSubmit={handleSubmit} method="POST">
                 <div>
                     <label htmlFor="name">Name:</label>
-                    <input type="text" name="name" defaultValue={name} onBlur={handleChange} required/>
+                    <input type="text" name="name" id="name" defaultValue={name} onBlur={handleChange} required/>
                 </div>
                 <div>
                     <label htmlFor="email">Email Address:</label>
-                    <input type="email" name="email" defaultValue={email} onBlur={handleChange} required/>
+                    <input type="email" name="email" id="email" defaultValue={email} onBlur={handleChange} required/>
                 </div>
                 <div>
                     <label hmtlFor="subject">Subject:</label>
-                    <input type="text" name="subject" defaultValue={subject} onBlur={handleChange} required/>
+                    <input type="text" name="subject" id="subject" defaultValue={subject} onBlur={handleChange} required/>
                 </div>
                 <div>
                     <label htmlFor="message">Message:</label>
-                    <textarea name="message" rows="5" defaultValue={message} onBlur={handleChange} required/>
+                    <textarea name="message" id="message" rows="5" defaultValue={message} onBlur={handleChange} required/>
                 </div>
                 {errorMessage && (
                     <div>
                         <p className="error-text">{errorMessage}</p>
                     </div>
                 )}
-                <button type="submit">{status}</button>
+                <button type="submit">Submit</button>
             </form>
         </section>
     );
