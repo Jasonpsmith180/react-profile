@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Portfolio from './components/Portfolio';
 import ContactForm from './components/Contact';
 import Resume from './components/Resume';
+import Home from './components/Home';
 
 function App() {
 
@@ -13,6 +14,8 @@ function App() {
 
   function renderSwitch(navSelected) {
     switch(navSelected) {
+      case '<About />':
+        return <About />;
       case '<Portfolio />': 
         return <Portfolio />;
       case '<ContactForm />':
@@ -20,7 +23,7 @@ function App() {
       case '<Resume />':
         return <Resume />;
       default:
-        return <About />;
+        return <Home />;
     }
   }
 
@@ -29,7 +32,6 @@ function App() {
       <Header
         navSelected={navSelected}
         setNavSelected={setNavSelected}
-
       />
       <main>
         {renderSwitch(navSelected)}

@@ -60,7 +60,7 @@ function ContactForm() {
     };
 
     return(
-        <section>
+        <section className="hero-form">
             <h1>Contact Me</h1>
             <form id="contact-form" onSubmit={handleSubmit} method="POST">
                 <div>

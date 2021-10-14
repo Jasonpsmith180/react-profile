@@ -2,6 +2,7 @@ import React from 'react';
 // import { capitalizeFirstLetter } from '../../utils/helpers';
 import About from '../About';
 import ContactForm from '../Contact';
+import Home from '../Home';
 import Portfolio from '../Portfolio';
 import Resume from '../Resume';
 
@@ -12,7 +13,7 @@ function Nav(props) {
         setNavSelected
     } = props;
 
-    return (
+    return (            
         <nav>
             <ul className="flex-row">
                 <li className={`mx-2 ${(navSelected === <About />) && 'navActive'}`}>
