@@ -68,7 +68,7 @@ function ProjectList() {
             {isModalOpen && (
                 <Modal currentProject={currentProject} onClose={toggleModal}/>
             )}
-            <div className="flex-row">
+            <div className="flex-row justify-center">
                 {projects.map((project, i) => {
                     return (
                     <img

@@ -3,7 +3,7 @@ import jasonResume from '../../assets/resume/JasonSmithResume.pdf'
 
 function Resume() {
     return (
-        <section className="my-5">
+        <section className="my-5 hero-form">
             <h2>Proficiencies</h2>
             <p>
                 <ul>
