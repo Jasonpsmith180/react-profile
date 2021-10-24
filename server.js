@@ -49,11 +49,6 @@ app.post("/send", function (req, res) {
     });
 });
 
-// check to see if the node environment is in production and serve static files
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../build')));
-}
-
 const PORT = process.ENV.PORT || 3001;
 
 app.listen(PORT, () => {
