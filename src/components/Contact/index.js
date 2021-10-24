@@ -32,7 +32,7 @@ function ContactForm() {
     async function handleSubmit(e) {
         e.preventDefault();
         console.log({ formState });
-        const response = await fetch("http://localhost:3001/send", {
+        const response = await fetch("https://jksmith-development.herokuapp.com/send", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
