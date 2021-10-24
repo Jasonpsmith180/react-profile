@@ -10,7 +10,7 @@ function Header(props) {
     } = props;
 
     return (
-        <header className="mb-4 py-2 flex-row align-center">
+        <header className="flex-row">
             <div className="container flex-row justify-space-between-lg justify-center align-center">
                 <h2 className={`py-1 px-1 ${(navSelected === <Home />) && 'navActive'}`}>
                     <span onClick={() => setNavSelected('<Home />')}>Jason Smith</span>
@@ -20,7 +20,6 @@ function Header(props) {
                     setNavSelected={setNavSelected}
                 />
             </div>
-            
         </header>
     );
 }

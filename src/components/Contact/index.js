@@ -60,31 +60,31 @@ function ContactForm() {
     };
 
     return(
-        <section className="hero-form">
+        <section className="hero-form my-5 flex-row">
+            <form id="contact-form" className="" onSubmit={handleSubmit} method="POST">
             <h1>Contact Me</h1>
-            <form id="contact-form" onSubmit={handleSubmit} method="POST">
                 <div>
                     <label htmlFor="name">Name:</label>
-                    <input type="text" name="name" id="name" defaultValue={name} onBlur={handleChange} required/>
+                    <input type="text" name="name" id="name" className="form-input" defaultValue={name} onBlur={handleChange} required/>
                 </div>
                 <div>
                     <label htmlFor="email">Email Address:</label>
-                    <input type="email" name="email" id="email" defaultValue={email} onBlur={handleChange} required/>
+                    <input type="email" name="email" id="email" className="form-input" defaultValue={email} onBlur={handleChange} required/>
                 </div>
                 <div>
                     <label hmtlFor="subject">Subject:</label>
-                    <input type="text" name="subject" id="subject" defaultValue={subject} onBlur={handleChange} required/>
+                    <input type="text" name="subject" id="subject" className="form-input" defaultValue={subject} onBlur={handleChange} required/>
                 </div>
                 <div>
                     <label htmlFor="message">Message:</label>
-                    <textarea name="message" id="message" rows="5" defaultValue={message} onBlur={handleChange} required/>
-                </div>
+                    <textarea name="message" id="message" className="form-input" rows="5" defaultValue={message} onBlur={handleChange} required/>
+                </div> < br/>
                 {errorMessage && (
                     <div>
                         <p className="error-text">{errorMessage}</p>
                     </div>
-                )}
-                <button type="submit">Submit</button>
+                )} 
+                <button className='' type="submit">Submit</button>
             </form>
         </section>
     );
