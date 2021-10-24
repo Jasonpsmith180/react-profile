@@ -13,7 +13,7 @@ function About() {
                     I love a good challenge and I am not afraid to jump into something new.
                 </p>
                 <p>
-                    If I am not on my computer building a project you can usually find me somewhere in the mountains doing something fun like hiking, mountain biking, or skiing.
+                    If I am not on my computer building a project you can usually find me somewhere in the mountains hiking, mountain biking, or skiing.
                     I feel being outdoors is a great way to balance out the time spent in front of my computer, it's also a great way to debug code when I get stuck.
                 </p>
             </div>

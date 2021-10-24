@@ -44,7 +44,7 @@ function ContactForm() {
             const resData = await res;
             console.log(resData);
             if (resData.status === "success") {
-                alert("Message Sent");
+                alert("Thank you for contacting me! I will respond as soon as possible.");
             } else if (resData.status === "fail") {
                 alert("Message failed to send");
             }
