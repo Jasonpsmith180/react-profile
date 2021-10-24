@@ -50,7 +50,7 @@ app.post("/send", function (req, res) {
 });
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '/build')));
+    app.use(express.static(path.join(__dirname, 'build')));
 }
 
 const PORT = process.env.PORT || 3001;
